@@ -1,0 +1,21 @@
+55428
+jobs
+bg 1
+fg 1
+clear
+sig 1 9
+quit
+cd ../
+cd -
+clea
+clear
+jobs
+jobs -r
+jobs -s
+jobs
+jobs -r
+gedit &
+jobs
+jobs -r
+clear
+clear
