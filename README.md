@@ -1,6 +1,6 @@
-**# Welcome to Ssshhelll!!**
+**Welcome to Ssshhelll!!**
 
-**### Steps to Run The Shell :**
+**Steps to Run The Shell :**
 
 - Clone the repository into the system.
 - cd into the corresponding directory.
@@ -13,7 +13,7 @@ Note :
 - Run the shell in the directory that it has been cloned into. 
 - The home directory for commands are considered to be the directory where we run the shell.
 
-**### Files and functions :**
+**Files and functions :**
 
 **Supporting Files :**
 
@@ -39,7 +39,7 @@ Note :
 - replay.c - Implement a `replay` command which executes a particular command in fixed time interval for a certain period.
 - sig.c - Implements `sig` command which sends the specified signal to the process with specified job number.
 
-**### Commands implemented :**
+**Commands implemented :**
 
 - `cd` : cd command changes the directory. The cd command has been implemented with the flags -  { cd . , cd .. , cd - , cd ~ , cd `<directory>` }.
 - `pwd` : pwd helps in printing the absolute path of the current working directory.
@@ -68,20 +68,20 @@ Note :
 
 - `quit` : helps us to exit from the current shell session. `exit/q` also works to quit the session. `Ctrl + D` signal also does the work for you.
 
-### Coding Style :
+Coding Style :
 
 This code is completely modular and is distributed over multiple .c and corresponding .h files for each of the functionality. The header.h consists of all the libraries to be used, some declarations of the values to be used and the global variables. The main.c calls the tokenize() function which in turn calls the respective functionality that has been requested. 
 
 Various errors handlings are done in the function for that command itself.
 
-### Pipes and Redirecting
+Pipes and Redirecting
 
 - Shell supports input and output redirection using `<`,  `>` and `>>`.
 - This is achieved by duplicating the file descriptors(dup,dup2) of the standard I/O files.
 - Shell also supports pipelining of commands using `|`, achieved using the `pipe` syscall.
 - Piping along with redirection can also be achieved by the shell.
 
-### Execution pattern of External Programs and Processes
+Execution pattern of External Programs and Processes
 - The Shell can run external programs in the foreground as well as in the background.
 - This is done by forking the shell process into two, replacing the child process's program image with that of the desired program to be run accordingly.
 - The parent process does or does not wait for the child process to terminate, for foreground or background processes respectively.
@@ -90,13 +90,13 @@ Various errors handlings are done in the function for that command itself.
 - Processes are stored in a linked list having processes as its nodes and it contains the information regarding that process.
 - This all is achieved by maintaining an list of processes, managing processing groups and manipulating the foreground process group of the attached terminal.
 
-### Signals handled
+Signals handled
 
 - `Ctrl + D` : It exits the shell without disturbing the main terminal. 
 - `Ctrl + C` : It interrupts any currently running foreground process, by sending it the `​SIGINT/2`​ signal.
 - `Ctrl + Z` : It pushes any currently running foreground process into the background and change its state from running to stopped.
 
-### Assumptions made :
+Assumptions made :
 
 - history.txt is already present in the directory that it has been cloned into.
 - Input command string doesn't exceeds 8192 characters.
